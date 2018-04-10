@@ -1,10 +1,9 @@
 ### Description
-Simply defines the Test Driven Development Katas. In this, lets try to create most famous katas to understand what are exactly Katas. These Katas can also be used for practicising your C# skills for Unit testing.
+Simply defines the Test Driven Development Katas. In this, lets try to create most famous katas to understand what are exactly Katas. These Katas can also be used for practicising your Python skills for Unit testing.
 ### How to contribute:
 Want to contribute? Make a pull request (PR) to [develop](/TDD-Katas-PHP/tree/develop) branch. Do not make any PR to Master branch.
 ### License
 MIT License, refer: [License info](/LICENSE.txt) for more information.
-### Explained [Learning Test Driven Development with TDD Katas](http://goo.gl/5NYpVI) -NEED A PHP Version
 
 ### More flavors
 Lookig for implementation in your technology? There are more flavors of the repository:
