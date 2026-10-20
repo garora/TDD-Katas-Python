@@ -39,6 +39,24 @@ Run the tests from the repository root:
 python -m unittest discover -s "src/Recently Used List" -p "test_rul.py" -v
 ```
 
+## String Sum
+
+**Files:** [string_sum.py](String%20Sum/string_sum.py) and [test_string_sum.py](String%20Sum/test_string_sum.py)
+
+Implement `sum_strings(left, right)` to add two natural-number strings and return the sum as a string. An empty string, a non-numeric string, or a non-string value is treated as `0`.
+
+Examples:
+
+- `sum_strings("1", "2")` returns `"3"`.
+- `sum_strings("", "")` returns `"0"`.
+- `sum_strings("not a number", "2")` returns `"2"`.
+
+Run the tests from the repository root:
+
+```powershell
+python -m unittest discover -s "src/String Sum" -p "test_string_sum.py" -v
+```
+
 ## Roman Numeral
 
 **Files:** [roman.py](Roman%20Numeral/roman.py) and [roman_test.py](Roman%20Numeral/roman_test.py)
@@ -75,7 +93,7 @@ For each behavior, follow the red-green-refactor cycle:
 For broader kata requirements and optional challenges, see [KatasReadMe.md](../KatasReadMe.md). Repository-wide contribution guidance is in [README.md](../README.md).
 ## Future Kata Catalog
 
-The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. Only **Recently Used List** and **Roman Numeral** are currently implemented in this repository. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
+The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
 
 For the existing Recently Used List kata, the catalog also includes an external Python walkthrough: [video tutorial](http://medrela.com/rul-kata).
 
