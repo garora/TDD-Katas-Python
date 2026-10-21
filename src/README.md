@@ -101,6 +101,17 @@ Run the tests from the repository root:
 ```powershell
 python -m unittest discover -s "src/Prime Factor" -p "test_prime_factors.py" -v
 ```
+## PrimeComposite
+
+**Files:** [prime_composite.py](PrimeComposite/prime_composite.py) and [test_prime_composite.py](PrimeComposite/test_prime_composite.py)
+
+Use `classify(number)` to return `"Prime"` for primes, `"Composite"` for odd composites, and the number unchanged for even values and values below `2`. `classify_range(start=1, end=100)` returns classifications for an inclusive range.
+
+Run the tests from the repository root:
+
+```powershell
+python -m unittest discover -s "src/PrimeComposite" -p "test_prime_composite.py" -v
+```
 ## Bowling Game
 
 **Files:** [bowling_game.py](Bowling%20Game/bowling_game.py) and [test_bowling_game.py](Bowling%20Game/test_bowling_game.py)
@@ -155,7 +166,7 @@ For each behavior, follow the red-green-refactor cycle:
 For broader kata requirements and optional challenges, see [KatasReadMe.md](../KatasReadMe.md). Repository-wide contribution guidance is in [README.md](../README.md).
 ## Future Kata Catalog
 
-The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, **OddEven**, **Prime Factor**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
+The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, **OddEven**, **Prime Factor**, **PrimeComposite**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
 
 For the existing Recently Used List kata, the catalog also includes an external Python walkthrough: [video tutorial](http://medrela.com/rul-kata).
 
