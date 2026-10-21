@@ -54,6 +54,7 @@ python3 -m unittest discover -s "src/FizzBuzz" -p "test_fizz_buzz.py" -v
 - [String Sum](src/String%20Sum/)
 - [String Calculator](src/String%20Calculator/)
 - [Bowling Game](src/Bowling%20Game/)
+- [Calc Stats](src/Calc%20Stats/)
 - [FizzBuzz](src/FizzBuzz/)
 - [OddEven](src/OddEven/)
 - [Prime Factor](src/Prime%20Factor/)
