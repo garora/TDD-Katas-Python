@@ -27,3 +27,7 @@ class RecentlyUsedListTests(unittest.TestCase):
             rul.insert(item)
         self.assertEqual(len(rul), 3)
         self.assertEqual(rul[0], duplicate)
+
+
+if __name__ == "__main__":
+    unittest.main()

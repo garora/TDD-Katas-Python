@@ -1,49 +1,65 @@
-# TDD Katas — Python
+# TDD Katas - Python
 
 ## Description
 
-A Python collection of Test-Driven Development (TDD) katas. Use these small programming exercises to practice writing tests first, iterating in small steps, and improving Python unit-testing skills.
+A collection of Python Test-Driven Development (TDD) katas. Each kata is kept in its own directory under `src` with a standard-library `unittest` suite so it can be practiced independently.
 
-## Katas
+## Requirements
+
+- Python 3.10 or newer
+- No third-party runtime or test dependencies
+
+Check your Python version from the repository root:
+
+```powershell
+python --version
+```
+
+## Run the Tests
+
+Run every implemented kata test suite from a clean checkout:
+
+```powershell
+python run_tests.py
+```
+
+The runner discovers test files in every kata directory, including directories whose names contain spaces, and returns a non-zero exit code if any test fails.
+
+To run one kata suite, use its documented command. For example:
+
+```powershell
+python -m unittest discover -s "src/FizzBuzz" -p "test_fizz_buzz.py" -v
+```
+
+Individual test files can also be run directly when they provide a `unittest` entry point. For example:
+
+```powershell
+python "src/Roman Numeral/roman_test.py"
+```
+
+## Implemented Katas
 
 - [Recently Used List](src/Recently%20Used%20List/)
+- [String Sum](src/String%20Sum/)
+- [String Calculator](src/String%20Calculator/)
+- [Bowling Game](src/Bowling%20Game/)
+- [FizzBuzz](src/FizzBuzz/)
+- [OddEven](src/OddEven/)
+- [Prime Factor](src/Prime%20Factor/)
 - [Roman Numeral](src/Roman%20Numeral/)
+
+The source-level guide contains kata-specific APIs, examples, and test commands: [src/README.md](src/README.md).
 
 ## Contributing
 
-Contributions are welcome. Please open pull requests against the [`develop`](https://github.com/garora/TDD-Katas-Python/tree/develop) branch; do not open pull requests directly against `master`.
-
-You can also report problems or suggest additional tests through GitHub issues.
+Contributions are welcome. Open pull requests against the [`develop`](https://github.com/garora/TDD-Katas-Python/tree/develop) branch rather than `master`. Report problems or propose additional tests through GitHub issues.
 
 ## Articles on TDD Katas
 
 1. [Learning Test Driven Development with TDD Katas](http://goo.gl/5NYpVI)
-2. [TDD-Kata practices](http://tddkatas.codeplex.com/) — *obsolete*
-
-## Contributors
-
-Many thanks to everyone who has contributed katas and code:
-
-1. [Justin Kurtz](https://github.com/justinkurtz)
-2. [Choi Jung Hyun](https://github.com/cjhnim)
-3. [Mikkel Nylander Bundgaard](https://github.com/mikkelbu)
-4. [Krzysztof Mędrela](https://github.com/chrismedrela)
-5. [Bruno Sanches](https://github.com/brunops)
-6. [Stephanie Melnyk](https://github.com/smelnyk-va)
-7. [Saurabh Mishra](https://github.com/saurabh9694)
-8. [John Lianoglou](https://github.com/prometheas)
-9. [Mattias Josefsson](https://github.com/matjos)
-10. [Māris Krivtežs](https://github.com/marisks)
-11. [Florian Brinker](https://github.com/fbrinker)
-12. [Santiago Castro](https://github.com/bryant1410)
-13. [Sean Killeen](https://github.com/SeanKilleen)
-14. [M Farag](https://github.com/MoeFarag)
-15. [Oleg Kainov](https://github.com/okainov)
-16. [Javier González](https://github.com/vitota95)
+2. [TDD-Kata practices](http://tddkatas.codeplex.com/) - obsolete
 
 ## More Flavors
-
-Looking for an implementation in another technology?
 
 1. [TDD Katas in .NET](https://github.com/garora/TDD-Katas)
 2. [TDD Katas in Java](https://github.com/garora/TDD-Katas-Java)
