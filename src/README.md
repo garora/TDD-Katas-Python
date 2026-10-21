@@ -145,15 +145,28 @@ Practice converting positive integers to Roman numerals with `get_roman_numeral(
 ```powershell
 python -m unittest discover -s "src/Roman Numeral" -p "roman_test.py" -v
 ```
+## Prerequisites and Setup
+
+- Install Python 3.11 or newer for your operating system. The project uses only the Python standard library; no third-party Python packages, `pip install`, Node.js, or npm packages are required. Verify with `python --version` on Windows or `python3 --version` on macOS/Linux. On Windows, `py -3` can be used instead if the Python launcher is installed and configured.
+- Official installation guides: [Windows](https://docs.python.org/3/using/windows.html), [macOS](https://docs.python.org/3/using/mac.html), and [Linux/Unix](https://docs.python.org/3/using/unix.html). For other operating systems, a compatible Python 3.11+ interpreter and command-line environment must be available; this repository cannot guarantee support for every device or OS.
+- Git is optional if you download the repository archive instead of cloning it. After the source and interpreter are available, tests run offline without installing packages.
 ## Running All Tests
 
-From the repository root, run the complete standard-library test suite with:
+From the repository root, run the complete standard-library test suite:
 
 ```powershell
+# Windows
 python run_tests.py
+# Or, if the Python launcher is installed and configured:
+py -3 run_tests.py
 ```
 
-The runner discovers every kata test suite, including directories with spaces in their names, and exits with a non-zero status if any test fails. No third-party dependencies are required; use Python 3.10 or newer. Individual kata commands remain documented in their respective sections.
+```sh
+# macOS / Linux / Unix-like systems
+python3 run_tests.py
+```
+
+The runner discovers every kata test suite, including directories with spaces in their names, and exits with a non-zero status if any test fails. Use a command that resolves to Python 3.11 or newer. Individual kata commands remain documented in their respective sections; substitute `python3` on macOS/Linux if `python` is not the Python 3 interpreter.
 ## TDD Practice
 
 For each behavior, follow the red-green-refactor cycle:

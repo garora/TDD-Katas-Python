@@ -6,37 +6,48 @@ A collection of Python Test-Driven Development (TDD) katas. Each kata is kept in
 
 ## Requirements
 
-- Python 3.10 or newer
-- No third-party runtime or test dependencies
+- Python 3.11 or newer (use a currently maintained Python 3 release).
+- No third-party Python packages, Node.js, or npm packages are required. The project and tests use only Python's standard library; do not run `pip install`.
+- A terminal/command prompt is needed to run the test runner.
+- Git is optional: clone the repository with Git, or download the source archive from GitHub.
 
-Check your Python version from the repository root:
+### Install Python
 
-```powershell
-python --version
-```
+Python is an interpreter, so a machine without a compatible Python installation must install one before it can run this project. Choose an official or operating-system-supported Python 3.11+ distribution:
 
+- **Windows:** follow the [official Windows installation guide](https://docs.python.org/3/using/windows.html) or download Python from [python.org](https://www.python.org/downloads/). After installation, open a new terminal and verify `python --version`. If the Python launcher is installed and configured, `py -3 --version` is another option.
+- **macOS:** follow the [official macOS guide](https://docs.python.org/3/using/mac.html) and use a supported installer from [python.org](https://www.python.org/downloads/macos/). Verify `python3 --version`. Do not replace or remove the Apple-controlled system Python.
+- **Linux and other Unix-like systems:** install Python 3.11+ through your distribution's supported package manager or follow the [official Unix installation guide](https://docs.python.org/3/using/unix.html). Verify `python3 --version`.
+- **Other operating systems/devices:** this repository is pure Python, but it is not a standalone executable and cannot run on every device automatically. The OS must have a compatible Python 3.11+ interpreter and a command-line environment; installation and compatibility on other platforms are not guaranteed by this project.
+
+Once the repository files and Python are installed, running the tests does not require network access or downloading additional packages.
 ## Run the Tests
 
-Run every implemented kata test suite from a clean checkout:
+From the repository root, run every implemented kata test suite:
 
 ```powershell
+# Windows PowerShell / Command Prompt
 python run_tests.py
+# Or, if the Python launcher is installed and configured:
+py -3 run_tests.py
 ```
 
-The runner discovers test files in every kata directory, including directories whose names contain spaces, and returns a non-zero exit code if any test fails.
+```sh
+# macOS / Linux / Unix-like shells
+python3 run_tests.py
+```
 
-To run one kata suite, use its documented command. For example:
+Use whichever command refers to the installed Python 3.11+ interpreter. The runner discovers tests in every kata directory, including directories whose names contain spaces, and returns a non-zero exit code if any test fails. No `pip`, npm, or other package installation is needed.
+
+To run an individual suite, for example:
 
 ```powershell
 python -m unittest discover -s "src/FizzBuzz" -p "test_fizz_buzz.py" -v
 ```
 
-Individual test files can also be run directly when they provide a `unittest` entry point. For example:
-
-```powershell
-python "src/Roman Numeral/roman_test.py"
+```sh
+python3 -m unittest discover -s "src/FizzBuzz" -p "test_fizz_buzz.py" -v
 ```
-
 ## Implemented Katas
 
 - [Recently Used List](src/Recently%20Used%20List/)
