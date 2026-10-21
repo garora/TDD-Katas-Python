@@ -57,6 +57,17 @@ Run the tests from the repository root:
 python -m unittest discover -s "src/String Sum" -p "test_string_sum.py" -v
 ```
 
+## String Calculator
+
+**Files:** [string_calculator.py](String%20Calculator/string_calculator.py) and [test_string_calculator.py](String%20Calculator/test_string_calculator.py)
+
+Implement `add(numbers)` to sum a delimiter-separated string of integers. Empty input returns `0`; comma and newline are the default separators. Declare a custom delimiter with `//<delimiter>\n`, for example `add("//;\n1;2")` returns `3`. The catalog's legacy `<delimiter>\n` declaration is supported too. Negative inputs raise `ValueError` and list every negative supplied.
+
+Run the tests from the repository root:
+
+```powershell
+python -m unittest discover -s "src/String Calculator" -p "test_string_calculator.py" -v
+```
 ## Roman Numeral
 
 **Files:** [roman.py](Roman%20Numeral/roman.py) and [roman_test.py](Roman%20Numeral/roman_test.py)
@@ -93,7 +104,7 @@ For each behavior, follow the red-green-refactor cycle:
 For broader kata requirements and optional challenges, see [KatasReadMe.md](../KatasReadMe.md). Repository-wide contribution guidance is in [README.md](../README.md).
 ## Future Kata Catalog
 
-The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
+The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
 
 For the existing Recently Used List kata, the catalog also includes an external Python walkthrough: [video tutorial](http://medrela.com/rul-kata).
 
