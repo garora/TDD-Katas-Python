@@ -90,6 +90,17 @@ Run the tests from the repository root:
 ```powershell
 python -m unittest discover -s "src/OddEven" -p "test_odd_even.py" -v
 ```
+## Prime Factor
+
+**Files:** [prime_factors.py](Prime%20Factor/prime_factors.py) and [test_prime_factors.py](Prime%20Factor/test_prime_factors.py)
+
+Use `prime_factors(number)` to return a positive integer's prime factors in ascending order, preserving repeated factors. `1` returns an empty list; zero, negative values, and non-integers raise `ValueError`.
+
+Run the tests from the repository root:
+
+```powershell
+python -m unittest discover -s "src/Prime Factor" -p "test_prime_factors.py" -v
+```
 ## Bowling Game
 
 **Files:** [bowling_game.py](Bowling%20Game/bowling_game.py) and [test_bowling_game.py](Bowling%20Game/test_bowling_game.py)
@@ -137,7 +148,7 @@ For each behavior, follow the red-green-refactor cycle:
 For broader kata requirements and optional challenges, see [KatasReadMe.md](../KatasReadMe.md). Repository-wide contribution guidance is in [README.md](../README.md).
 ## Future Kata Catalog
 
-The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, **OddEven**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
+The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, **OddEven**, **Prime Factor**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
 
 For the existing Recently Used List kata, the catalog also includes an external Python walkthrough: [video tutorial](http://medrela.com/rul-kata).
 
