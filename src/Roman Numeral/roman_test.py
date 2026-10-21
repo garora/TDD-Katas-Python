@@ -1,188 +1,77 @@
-__author__ = 'smelnyk'
+"""Tests for the Roman Numeral kata."""
 
 import unittest
-from roman import get_roman_numeral
-from roman import get_number_from_roman_numeral
 
+from roman import get_number_from_roman_numeral, get_roman_numeral
 
-# http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals
-# http://www.roman-numerals.org/chart100.html
-# http://www.novaroma.org/via_romana/numbers.html
-# http://www.roman-numerals.org/calculator.html
 
 class RomanNumeralsConvertToRomanTests(unittest.TestCase):
+    def test_individual_symbols(self):
+        self.assertEqual("I", get_roman_numeral(1))
+        self.assertEqual("V", get_roman_numeral(5))
+        self.assertEqual("X", get_roman_numeral(10))
+        self.assertEqual("L", get_roman_numeral(50))
+        self.assertEqual("C", get_roman_numeral(100))
+        self.assertEqual("D", get_roman_numeral(500))
+        self.assertEqual("M", get_roman_numeral(1000))
 
-    # The following tests are testing the "get_roman_numeral()" method
-    def test_one(self):
-        result = get_roman_numeral(1)
-        self.assertEqual('I', result)
+    def test_additive_values(self):
+        self.assertEqual("VII", get_roman_numeral(7))
+        self.assertEqual("XVI", get_roman_numeral(16))
+        self.assertEqual("XXVIII", get_roman_numeral(28))
+        self.assertEqual("LXXXVIII", get_roman_numeral(88))
 
-    def test_ten(self):
-        result = get_roman_numeral(10)
-        self.assertEqual('X', result)
+    def test_subtractive_values(self):
+        self.assertEqual("IV", get_roman_numeral(4))
+        self.assertEqual("IX", get_roman_numeral(9))
+        self.assertEqual("XL", get_roman_numeral(40))
+        self.assertEqual("XC", get_roman_numeral(90))
+        self.assertEqual("CD", get_roman_numeral(400))
+        self.assertEqual("CM", get_roman_numeral(900))
 
-    def test_five(self):
-        result = get_roman_numeral(5)
-        self.assertEqual('V', result)
+    def test_larger_values(self):
+        self.assertEqual("CDXLVIII", get_roman_numeral(448))
+        self.assertEqual("MCMLXXXIX", get_roman_numeral(1989))
+        self.assertEqual("MMMMMCDXCIV", get_roman_numeral(5494))
 
-    def test_seven(self):
-        result = get_roman_numeral(7)
-        self.assertEqual('VII', result)
+    def test_non_positive_and_non_integer_values_are_rejected(self):
+        for value in (-1, 0, None, "", "test", True):
+            with self.subTest(value=value):
+                with self.assertRaises(TypeError):
+                    get_roman_numeral(value)
 
-    def test_sixteen(self):
-        result = get_roman_numeral(16)
-        self.assertEqual('XVI', result)
-
-    def test_twenty_eight(self):
-        result = get_roman_numeral(28)
-        self.assertEqual('XXVIII', result)
-
-    def test_four(self):
-        result = get_roman_numeral(4)
-        self.assertEqual('IV', result)
-
-    def test_four(self):
-        result = get_roman_numeral(9)
-        self.assertEqual('IX', result)
-
-    def test_thirty_nine(self):
-        result = get_roman_numeral(39)
-        self.assertEqual('XXXIX', result)
-
-    def test_thirty_four(self):
-        result = get_roman_numeral(34)
-        self.assertEqual('XXXIV', result)
-
-    def test_fifty(self):
-        result = get_roman_numeral(50)
-        self.assertEqual('L', result)
-
-    def test_fifty_nine(self):
-        result = get_roman_numeral(59)
-        self.assertEqual('LIX', result)
-
-    def test_one_hundred(self):
-        result = get_roman_numeral(100)
-        self.assertEqual('C', result)
-
-    def test_five_hundred(self):
-        result = get_roman_numeral(500)
-        self.assertEqual('D', result)
-
-    def test_one_thousand(self):
-        result = get_roman_numeral(1000)
-        self.assertEqual('M', result)
-
-    def test_eighty_eight(self):
-        result = get_roman_numeral(88)
-        self.assertEqual('LXXXVIII', result)
-
-    def test_eighty_nine(self):
-        result = get_roman_numeral(89)
-        self.assertEqual('LXXXIX', result)
-
-    def test_negative_number(self):
-        with self.assertRaises(TypeError):
-            result = get_roman_numeral(-1)
-
-    def test_none(self):
-        with self.assertRaises(TypeError):
-            result = get_roman_numeral(None)
-
-
-    def test_empty_string(self):
-        with self.assertRaises(TypeError):
-            result = get_roman_numeral('')
-
-    def test_zero(self):
-        with self.assertRaises(TypeError):
-            result = get_roman_numeral(0)
-
-    def test_alphacharacter(self):
-        with self.assertRaises(TypeError) as e:
-            result = get_roman_numeral('test')
-        self.assertEqual('The value you entered is invalid: {num} is not a positive integer.'.format(num='test'),
-                         str(e.exception))
-
-    def test_nineteen(self):
-        result = get_roman_numeral(19)
-        self.assertEqual('XIX', result)
-
-    def test_ninety(self):
-        result = get_roman_numeral(90)
-        self.assertEqual('XC', result)
-
-    def test_fourty(self):
-        result = get_roman_numeral(40)
-        self.assertEqual('XL', result)
-
-    def test_four_hundred_and_fourty_eight(self):
-        result = get_roman_numeral(448)
-        self.assertEqual('CDXLVIII', result)
-
-    def test_nineteen_eighty_nine(self):
-        result = get_roman_numeral(1989)
-        self.assertEqual('MCMLXXXIX', result)
-
-    def test_nine_hundred_and_ninety(self):
-        result = get_roman_numeral(990)
-        self.assertEqual('CMXC', result)
-
-    def test_nineteen_ninety(self):
-        result = get_roman_numeral(1990)
-        self.assertEqual('MCMXC', result)
-
-    def test_nineteen_ninety_nine(self):
-        result = get_roman_numeral(1999)
-        self.assertEqual('MCMXCIX', result)
-
-    def test_two_thousand_and_eight(self):
-        result = get_roman_numeral(2008)
-        self.assertEqual('MMVIII', result)
-
-    def test_two_thousand_nine_hundred_and_ninety(self):
-        result = get_roman_numeral(2990)
-        self.assertEqual('MMCMXC', result)
-
-    def test_two_thousand_nine_hundred_and_ninety_nine(self):
-        result = get_roman_numeral(2999)
-        self.assertEqual('MMCMXCIX', result)
-
-    def test_two_thousand_four_hundred_and_fourty_four(self):
-        result = get_roman_numeral(2444)
-        self.assertEqual('MMCDXLIV', result)
-
-    def test_three_thousand(self):
-        result = get_roman_numeral(3000)
-        self.assertEqual('MMM', result)
-
-    def test_five_thousand_four_hundred_and_ninety_four(self):
-        result = get_roman_numeral(5494)
-        self.assertEqual('MMMMMCDXCIV', result)
+    def test_invalid_value_message_is_clear(self):
+        with self.assertRaises(TypeError) as error:
+            get_roman_numeral("test")
+        self.assertEqual(
+            "The value you entered is invalid: test is not a positive integer.",
+            str(error.exception),
+        )
 
 
 class RomanNumeralsConvertToNumberFromRomanTests(unittest.TestCase):
+    def test_individual_symbols(self):
+        self.assertEqual(1, get_number_from_roman_numeral("I"))
+        self.assertEqual(5, get_number_from_roman_numeral("V"))
+        self.assertEqual(10, get_number_from_roman_numeral("X"))
+        self.assertEqual(50, get_number_from_roman_numeral("L"))
 
-    def test_convert_I_to_1(self):
-        result = get_number_from_roman_numeral('I')
-        self.assertEqual(1, result)
+    def test_subtractive_values(self):
+        self.assertEqual(4, get_number_from_roman_numeral("IV"))
+        self.assertEqual(9, get_number_from_roman_numeral("IX"))
+        self.assertEqual(1990, get_number_from_roman_numeral("MCMXC"))
 
-    def test_convert_V_to_5(self):
-        result = get_number_from_roman_numeral('V')
-        self.assertEqual(5, result)
+    def test_round_trip_conversion(self):
+        for number in (1, 4, 9, 39, 448, 1989, 5494):
+            with self.subTest(number=number):
+                self.assertEqual(number, get_number_from_roman_numeral(get_roman_numeral(number)))
 
-    def test_convert_X_to_10(self):
-        result = get_number_from_roman_numeral('X')
-        self.assertEqual(10, result)
+    def test_invalid_roman_numerals_are_rejected(self):
+        for numeral in ("", "A", "IIII", "IC", "VX", None):
+            with self.subTest(numeral=numeral):
+                with self.assertRaises((TypeError, ValueError)):
+                    get_number_from_roman_numeral(numeral)
 
-    def test_convert_L_to_50(self):
-        result = get_number_from_roman_numeral('L')
-        self.assertEqual(50, result)
 
-    def test_convert_IX_to_9(self):
-        result = get_number_from_roman_numeral('IX')
-        self.assertEqual(9, result)
-
-    def test_convert_IV_to_4(self):
-        result = get_number_from_roman_numeral('IV')
-        self.assertEqual(4, result)
+if __name__ == "__main__":
+    unittest.main()

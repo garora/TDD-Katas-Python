@@ -127,15 +127,22 @@ Practice converting positive integers to Roman numerals with `get_roman_numeral(
 5. Test invalid input, including zero, negative numbers, and non-integer values.
 6. Complete the reverse conversion function, then add round-trip tests from integers to numerals and back.
 
-### Current Limitation
+### Python 3 Compatibility
 
-`roman.py` contains legacy Python 2 syntax and APIs, including bare `print` statements and `long`. It must be ported before its test suite can run with Python 3.
+`roman.py` and `roman_test.py` are compatible with Python 3. The kata supports conversion in both directions and rejects invalid values or non-canonical Roman numeral strings.
 
 ```powershell
-# Run after porting roman.py to Python 3 syntax
 python -m unittest discover -s "src/Roman Numeral" -p "roman_test.py" -v
 ```
+## Running All Tests
 
+From the repository root, run the complete standard-library test suite with:
+
+```powershell
+python run_tests.py
+```
+
+The runner discovers every kata test suite, including directories with spaces in their names, and exits with a non-zero status if any test fails. No third-party dependencies are required; use Python 3.10 or newer. Individual kata commands remain documented in their respective sections.
 ## TDD Practice
 
 For each behavior, follow the red-green-refactor cycle:
