@@ -79,6 +79,17 @@ Run the tests from the repository root:
 ```powershell
 python -m unittest discover -s "src/FizzBuzz" -p "test_fizz_buzz.py" -v
 ```
+## OddEven
+
+**Files:** [odd_even.py](OddEven/odd_even.py) and [test_odd_even.py](OddEven/test_odd_even.py)
+
+Use `classify(number)` to return prime numbers and values below `2` unchanged, `"Even"` for positive non-prime even values, and `"Odd"` for positive odd composites. `classify_range(start=1, end=100)` returns classifications for an inclusive range.
+
+Run the tests from the repository root:
+
+```powershell
+python -m unittest discover -s "src/OddEven" -p "test_odd_even.py" -v
+```
 ## Bowling Game
 
 **Files:** [bowling_game.py](Bowling%20Game/bowling_game.py) and [test_bowling_game.py](Bowling%20Game/test_bowling_game.py)
@@ -126,7 +137,7 @@ For each behavior, follow the red-green-refactor cycle:
 For broader kata requirements and optional challenges, see [KatasReadMe.md](../KatasReadMe.md). Repository-wide contribution guidance is in [README.md](../README.md).
 ## Future Kata Catalog
 
-The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
+The complete catalog below is retained from the companion TDD-Katas repository as the backlog for future Python implementations. The currently implemented katas are **Recently Used List**, **String Sum**, **String Calculator**, **Bowling Game**, **FizzBuzz**, **OddEven**, and **Roman Numeral**. Requirements, function signatures, and project-file references that are specific to another language should be adapted to idiomatic Python when implementing each planned kata.
 
 For the existing Recently Used List kata, the catalog also includes an external Python walkthrough: [video tutorial](http://medrela.com/rul-kata).
 
